@@ -1,0 +1,66 @@
+ion-toolbar {
+  --background: #d22b32 !important;
+  color: white !important;
+}
+
+ion-content {
+   --background: url('/assets/images/bg-img-white.png') no-repeat bottom;
+}
+
+
+h3 {
+  margin-top: 0;
+  color: lightgrey;
+}
+
+h2 {
+  font-size: 1em;
+  margin-top: 0;
+  font-family:  Times, serif;
+}
+
+h4 {
+  font-size: 0.97em;
+  font-family: 'calibri';
+}
+
+.align {
+  text-align: center;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+  text-align: center;
+  padding: 0px 10px 10px 0px;
+
+  .descripiton {
+    font-size: small;
+    font-weight: 10;
+    font-family:  'calibri', serif;
+    // text-align: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+
+  .title {
+    margin-bottom: auto;
+  }
+}
+
+ion-grid ion-card {
+  // padding-right: 10px;
+  // padding-left: 10px;
+  padding: 10px 10px 10px 15px;
+  --background: url(/assets/bgcours.jpg) no-repeat;
+  background-position: center;
+  margin-bottom: -10px;
+  margin-right: 10px;
+  color: white !important;  
+}
+  
+ion-badge {
+  align-items: center;
+  text-align: center;
+}

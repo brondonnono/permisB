@@ -1,0 +1,64 @@
+<ion-content>
+  <div class="padding">
+    <!-- choix de la langue -->
+
+    <div class="logo">
+      <img src="assets/images/logo.png">
+    </div>
+
+
+    <!-- version française -->
+    <div class="information" >
+      <label>Formez-vous, recyclez-vous</label>
+    </div>
+    <form [formGroup]="connexionForm" >
+      <ion-item class="ion-padding-start" lines="none">
+        <ion-label>
+          <ion-icon slot="start icon-only" name="Mail"></ion-icon>
+        </ion-label>
+        <ion-input type="email" formControlName="connexionEmail" [(ngModel)]="user.userData.email" color="light" placeholder="Adresse mail"></ion-input>
+      </ion-item>
+
+      <!-- E-mail error message -->
+      <div *ngFor="let error of errorMessages.email">
+        <ng-container *ngIf="error.lang=='fr' && connexionEmail.hasError(error.type) && (connexionEmail.dirty || connexionEmail.touched)">
+            <small class="error-message"><ion-icon name="alert-circle-outline" slot="start"></ion-icon>&nbsp;{{ error.message }}</small>
+        </ng-container> 
+      </div>
+      <br/>
+      <ion-item class="ion-padding-start" lines="none">
+        <ion-label>
+          <ion-icon slot="start icon-only" name="lock-open"></ion-icon>
+        </ion-label>
+        <ion-input type="password" formControlName="connexionPassword" [(ngModel)]="user.userData.password" color="light" placeholder="Mot de passe"></ion-input>
+      </ion-item>
+      <!-- Password error message -->
+      <div *ngFor="let error of errorMessages.password">
+        <ng-container *ngIf="error.lang=='fr' && connexionPassword.hasError(error.type) && (connexionPassword.dirty || connexionPassword.touched)">
+            <small class="error-message"><ion-icon name="alert-circle-outline" slot="start"></ion-icon>&nbsp;{{ error.message }}</small>
+        </ng-container> 
+      </div>
+      <br/>
+      <ion-item class="ion-padding-start" lines="none">
+        <ion-label>
+          <ion-icon slot="start icon-only" name="lock-open"></ion-icon>
+        </ion-label>
+        <ion-input type="password" formControlName="connexionConfirmPassword" [(ngModel)]="user.userData.Cpassword" color="light" placeholder=" Confirmez mot de passe"></ion-input>
+      </ion-item>
+      <!-- Password error message -->
+      <div *ngFor="let error of errorMessages.password">
+        <ng-container *ngIf="error.lang=='fr' && connexionConfirmPassword.hasError(error.type) && (connexionConfirmPassword.dirty || connexionConfirmPassword.touched)">
+            <small class="error-message"><ion-icon name="alert-circle-outline" slot="start"></ion-icon>&nbsp;{{ error.message }}</small>
+        </ng-container> 
+      </div>
+      <br/>
+      <ion-item class="forgotBtn" lines="none">
+        <ion-button color="dark" slot="end" routerLink="/forgot" fill="clear"><u>M</u><u class="u">ot de passe oublié</u></ion-button>
+      </ion-item>
+
+      <ion-button class="action-button btn_done" [disabled]="!connexionForm.valid" (click)="signin()" color="danger" expand="block" ><label>S</label><label class="lower">e connecter</label></ion-button>
+      
+      <br>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,125 @@
+
+.padding {
+    padding: 5%!important;
+}
+
+.padding > ion-item {
+    ion-label {
+        font-size: 14px;
+    }
+    color: gray;
+    border: 1px solid gray;
+}
+
+ion-label ion-icon {
+    //transform: translate(5%, 25%);
+    font-size: 2em;
+}
+
+.logo {
+    position: relative;
+    margin: 30px 10px 30px 10px;
+    text-align: center;
+    img {
+        width: 180px;
+    }
+}
+
+.information {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+ion-content {
+    --background: url('/assets/images/_bg-img-white.png') no-repeat bottom;
+} 
+
+ion-item {
+    --ion-background-color: transparent !important;
+}
+
+form {
+    ion-item {
+        border: 1px solid gray;
+        ion-input {
+            color: gray;
+        }
+    }
+    ion-label {
+        font-size: 0.8em !important;
+        color: gray !important;
+        text-align: center;
+    }
+}
+
+ion-toolbar {
+    --background: #d22b32 !important;
+    color: white;
+}
+
+ion-item ion-label {
+    padding-left: -5px;
+}
+
+.forgotBtn {
+    border: none !important;
+    justify-content: right;
+    margin: -20px -26px 10px 0;
+}
+.u, .lower {
+    text-transform: lowercase !important;
+    font-size: 12px;
+}
+
+.btn_done {
+    // padding: 10px;
+}
+
+// .header {
+//     background-color: #093637;
+//     padding-top: 10px;
+//     padding-left: 10%;
+//     padding-right: 10%;
+//     padding-bottom: 15px;
+//     border-radius: 0%;
+//     border-top-right-radius: 0px;
+//     border-top-left-radius: 0px;
+//   }
+
+//   .title{
+//     text-align: center;
+//     color:white;
+//     font-size: 1em;
+//   }
+
+
+ion-input {
+    -ms-input-placeholder: 0.8em !important;
+}
+
+// .inscription-title {
+//     font-size: larger !important;
+//     font-family: tahoma, Georgia, Times, 'Times New Roman', serif;
+//     margin-top: 3em;
+//     color: whitesmoke;
+// }
+// .inscription-title-box {
+//     margin-bottom: 1em;
+// }
+
+.ion-padding .padding .connexion, .inscription ion-input {
+    color: #abefff;
+}
+.ion-padding .padding ion-label {
+    font-weight: bold;
+}
+// .notification-icon {
+//     margin-right: 5px;
+// }
+.error-message {
+    color: #f55;
+    display: flex;
+    justify-content: center;
+    font-size: smaller;
+}

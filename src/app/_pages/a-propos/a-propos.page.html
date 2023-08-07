@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- button placed to the top start -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="margin-left: -20px;">
+      A propos de nous
+    </ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <div class="mg-10">
+    <ion-slides class="slideroption" #slider loop="true" pager="true" [options]="slideOptions" (ionSlideTouchEnd)="slideChanged()" >
+      <ion-slide class="slide-zoom">
+        <img [src]="sliderImg.img1" alt="auto-ecole images" />
+      </ion-slide>
+      <ion-slide class="slide-zoom">
+        <img [src]="sliderImg.img2" alt="auto-ecole images" />
+      </ion-slide>
+      <ion-slide class="slide-zoom">
+        <img [src]="sliderImg.img3" alt="auto-ecole images" />
+      </ion-slide>
+      <ion-slide class="slide-zoom">
+        <img [src]="sliderImg.img4" alt="auto-ecole images" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <span class="bloc">
+    <ion-label><strong>{{aboutData.titre1}}</strong></ion-label>
+  </span>
+  <div class="description">
+    <p>{{aboutData.contenu1}}</p>
+  </div>
+  <span class="bloc">
+    <ion-label><strong>{{aboutData.titre2}}</strong></ion-label>
+  </span>
+  <div class="description">
+    <p>{{aboutData.contenu2}}</p>
+  </div>
+  <span class="bloc">
+    <ion-label><strong>Visualiser ou Telecharger le document</strong></ion-label>
+  </span>
+  <br/>
+  <br/>
+  <div class="pdf">
+    <a [href]="BASE_URL + aboutData.fichier">
+      <img src="assets/logo-pdf0.png" alt="Telecharger PDF" />
+    </a>
+  </div>
+  <br/>
+  <div class="footer">
+    <br>
+    <ion-label><strong>CONTACTS</strong></ion-label>
+    <br/><br/>
+    <div>
+      {{aboutData.localisation}}
+    </div>
+    <br/>
+    <div>
+      <ion-buttons slot="end" color="dark">
+        <ion-button class="firstBtn" (click)="openContact(aboutData.tel)">
+          Appeler
+        </ion-button>
+        <ion-button (click)="sendMail(aboutData.email)">
+          Ecrire
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <br>
+  </div>
+</ion-content>

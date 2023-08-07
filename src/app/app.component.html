@@ -1,0 +1,64 @@
+<ion-app  [class.dark-theme]="darkMode.dark">
+  <ion-split-pane contentId="main-content">
+    
+    <ion-menu contentId="main-content" class="padding">
+      <ion-content class="red pg-b-0">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <ion-item lines="none" class="no-padding-start red">
+                <div class="flex">
+                  <div>
+                    <img class="profil" [src]="user.userData.img" alt="profil-photo" />
+                  </div>
+                  <div class="flexi">
+                    <div class="name">
+                      <ion-label>
+                        {{user.userData.nom}}
+                      <h6>Utilisateur</h6>
+                      </ion-label>
+                    </div>
+                    <div>
+                      <ion-label class="sloganA">
+                        <strong>
+                          Mon permis B
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </strong>
+                      </ion-label>
+                      <ion-label class="sloganB">
+                        En 1 Clic
+                      </ion-label>
+                    </div>
+                  </div>
+                </div>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngFor="let item of menuItems">
+            <ion-col>
+              <ion-item lines="none"(click)="goTo(item)" class="red item padding">
+                <ion-icon slot="start" class="item" [name]="item.icon"></ion-icon>
+                <ion-label>
+                  {{item.title}}
+                </ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+      <ion-footer>
+        <ion-item lines="none" class="dark">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <ion-label>
+            V_CAM SARL
+          </ion-label>
+        </ion-item>
+      </ion-footer>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

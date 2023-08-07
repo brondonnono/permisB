@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title >
+      Actualités
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="border flex" >
+      <ion-input placeholder="Rechercher un titre, une date" (ionInput)="filtreActualites($event)"></ion-input>
+    <button class="search" *ngIf="!darkMode.dark">
+      <ion-icon name="search"></ion-icon>
+    </button>
+    <button class="search-dark" *ngIf="darkMode.dark">
+      <ion-icon name="search"></ion-icon>
+    </button>
+  </div>
+  <div>
+    <ion-grid *ngIf="!rejected">
+      <ion-row>
+        <ion-col size="6" *ngFor="let actus of actualites">
+          <ion-card (click)="showDetail(actus)">
+              <img [src]="URL+actus.photo" />
+              <div class="padding">
+                {{actus.titre}}
+                <ion-icon slot="end" name="chevron-forward-circle-sharp" color="secondary"></ion-icon>
+              </div>
+            <ion-card-content>
+              <div class="datePub txt_right">
+                <ion-icon slot="start" name="time-outline"></ion-icon>
+                {{actus.created_at | date: 'dd/MM/yyyy'}}
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

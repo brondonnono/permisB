@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title >Paramètres</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label>
+        Mode Dark
+      </ion-label>
+      <ion-toggle [(ngModel)]="darkMode.dark" color="danger"></ion-toggle>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label  class="gray">
+        Communique
+      </ion-label>
+    </ion-item>
+      <ion-item class="social">
+        <ion-icon name="logo-facebook" color="dark"></ion-icon>
+        <ion-label class="center">
+          Mon permis B en quelques clics sur Facebook
+        </ion-label>
+        <ion-icon name="chevron-forward-outline" color="dark"></ion-icon>
+      </ion-item>
+      <ion-item class="social">
+        <ion-icon name="logo-twitter" color="dark"></ion-icon>
+        <ion-label class="center">
+          Mon permis B en quelques clics sur Twitter
+        </ion-label>
+        <ion-icon name="chevron-forward-outline" color="dark"></ion-icon>
+      </ion-item>
+      <ion-item class="social">
+        <ion-icon name="chatbubble-outline" color="dark"></ion-icon>
+        <ion-label class="center">
+          Donnez votre avis
+        </ion-label>
+        <ion-icon name="chevron-forward-outline" color="dark"></ion-icon>
+      </ion-item>
+  
+  </ion-card>
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label  class="gray">
+        A propos
+      </ion-label>
+    </ion-item>
+      <ion-item class="about">
+        <ion-label>
+          Version
+        </ion-label>
+        <ion-label slot="end" class="gray">
+          V1.0.0
+        </ion-label>
+      </ion-item>
+      <ion-item class="about">
+        <ion-label>
+          Références
+        </ion-label>
+        <ion-label slot="end" class="gray">
+          <a href="https://www.visibilityCam.com">www.visibilityCam.com</a>
+        </ion-label>
+      </ion-item>
+      <ion-item class="about">
+          Signaler un soucis
+        <ion-label slot="end" class="gray">
+          <a href="#">Faites le Ici</a>
+        </ion-label>
+      </ion-item>
+      <ion-item class="about">
+        <ion-label>
+          Vos Suggestions
+        </ion-label>
+        <ion-label slot="end" class="gray">
+          <a href="#">Faites le Ici</a>
+        </ion-label>
+      </ion-item>
+  </ion-card>
+  <div>
+    <ion-buttons class="logout">
+      <ion-button (click)="logout()">
+        <ion-icon name="exit" slot="start"></ion-icon>
+        Deconnexion
+      </ion-button>
+    </ion-buttons>
+  </div>
+  <br />
+  <ion-footer>
+   <label class="link">
+     Une application réalisée par <a href="https://www.visibilityCam.com">V_CAM SARL</a>
+   </label>
+  </ion-footer>
+
+</ion-content>

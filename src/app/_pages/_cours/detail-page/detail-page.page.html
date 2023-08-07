@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- button placed to the top start -->
+    <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+       {{mycourse.title1}}
+   </ion-title>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div class="img">
+      <img [src]="mycourse.img1" [alt]="mycourse.title1">
+    </div>
+    <span class="bloc">
+      <ion-label><strong>{{mycourse.title1}}</strong></ion-label>
+    </span>
+    <!-- <div class="title">
+      <ion-label>{{mycourse.title1}}</ion-label> 
+    </div> -->
+    <div class="description">
+      <p>{{mycourse.description1}}</p>
+    </div>
+  </div>
+  <div class="paginate">
+    <ion-button fill="outline" color="dark" (click)="previous()">
+      <ion-icon name="chevron-back-sharp"></ion-icon>
+    </ion-button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    {{actualPage}} sur {{totalPage}}
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <ion-button fill="outline" color="dark" (click)="next()">
+      <ion-icon name="chevron-forward-sharp"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

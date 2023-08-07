@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- button placed to the top start -->
+    <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+    <ion-title>
+      Détails articles
+    </ion-title>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="img">
+    <img [src]="article.img">
+  </div>
+  <div class="ion-padding-start center ion-padding-end ion-padding-bottom">
+    <h5>
+      <strong>
+        {{article.title}}
+      </strong>
+    </h5>
+  </div>
+  <div class="end">
+    <ion-label class="datePub">
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      {{article.datePub}}
+    </ion-label>
+  </div>
+  <div class="description ion-padding-start ion-padding-end">
+    <p>{{article.description}}</p>
+  </div>
+  <div class="pdf_download ion-padding-top">
+    <!--Rendre ceci telechargeable-->
+    <a href="/assets/pdf/pdf.pdf">
+      <!-- <a [href]="article.pdf"> -->
+      <img src="assets/images/logo-pdf.png" alt="pdf a telecharger" />
+    </a>
+  </div>  
+</ion-content>

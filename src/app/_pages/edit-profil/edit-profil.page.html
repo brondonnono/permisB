@@ -1,0 +1,78 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-label class="titre">Editer mon Profil</ion-label>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="about-header">
+    <div class="about-image madison" [ngStyle]="location === 'madison' && {'opacity': '1'}">
+      <div class="logo">
+        <img [src]="user.userData.img" alt="profil-photo">
+        <!-- version française -->
+        <div class="information">
+          <label (click)="addPicture()"><u>Modifier</u></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white">
+    <div class="about-info">
+      <!-- version française -->
+      <form class="ion-padding-top" [formGroup]="profilForm">
+          <ion-item lines="none">
+            <ion-label color="dark">
+              <ion-icon slot="icon-only" name="mail"></ion-icon>
+            </ion-label>
+            <ion-input type="text" formControlName="profilPrenom" [(ngModel)]="user.userData.pre" color="dark" placeholder="Prenom(s)"></ion-input>
+          </ion-item>
+          <!-- prenom error message -->
+          <div *ngFor="let error of errorMessages.prenom">
+            <ng-container *ngIf="error.lang=='fr' && profilPrenom.hasError(error.type) && (profilPrenom.dirty || profilPrenom.touched)">
+                <small class="error-message"><ion-icon name="alert-circle-outline" slot="start"></ion-icon>&nbsp;{{ error.message }}</small>
+            </ng-container> 
+          </div>
+          <br/>
+          <ion-item lines="none">
+            <ion-label color="dark">
+              <ion-icon slot="start icon-only" name="lock-closed"></ion-icon>
+            </ion-label>
+            <ion-input type="password" formControlName="profilPassword" [(ngModel)]="user.userData.password" color="dark" placeholder="Mot de passe"></ion-input>
+          </ion-item>
+          <!-- Password error message -->
+          <div *ngFor="let error of errorMessages.password">
+            <ng-container *ngIf="error.lang=='fr' && profilPassword.hasError(error.type) && (profilPassword.dirty || profilPassword.touched)">
+                <small class="error-message"><ion-icon name="alert-circle-outline" slot="start"></ion-icon>&nbsp;{{ error.message }}</small>
+            </ng-container> 
+          </div>
+          <br/>
+          <ion-item lines="none">
+            <ion-label color="dark">
+              <ion-icon slot="start icon-only" name="lock-closed"></ion-icon>
+            </ion-label>
+            <ion-input type="password" formControlName="profilConfirmPassword" [(ngModel)]="user.userData.Cpassword" color="dark" placeholder=" Confirmez Mot de passe"></ion-input>
+          </ion-item>
+          <!-- Password error message -->
+          <div *ngFor="let error of errorMessages.password">
+            <ng-container *ngIf="error.lang=='fr' && profilConfirmPassword.hasError(error.type) && (profilConfirmPassword.dirty || profilConfirmPassword.touched)">
+                <small class="error-message"><ion-icon name="alert-circle-outline" slot="start"></ion-icon>&nbsp;{{ error.message }}</small>
+            </ng-container> 
+          </div>
+          <br/>
+          <br />
+          <br/>
+      </form>
+    </div>
+    <br/>
+    <ion-button class="action-button" [disabled]="!profilForm.valid" (click)="valider()" color="danger" expand="block">Editer</ion-button>
+    <br>
+    <br>
+    <br>
+  </div>
+</ion-content>
+<ion-footer>
+  &nbsp;
+</ion-footer>

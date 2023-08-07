@@ -1,0 +1,8 @@
+{
+  "name": "permisEcole",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

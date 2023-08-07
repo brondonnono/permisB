@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- button placed to the top start -->
+    <ion-buttons slot="start">
+     <ion-button routerLink="/les-cours">
+       <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+     </ion-button>
+   </ion-buttons>
+   <ion-title>
+      Sous menu
+   </ion-title>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngFor="let submenu of subMenulist">
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="showCourse()">
+          <div class="flex">
+            <div class="title align">
+              <ion-label>{{submenu.title}}</ion-label>
+              &nbsp;
+            </div>
+            <div class="descripiton align">
+              <ion-label>{{submenu.description}}</ion-label>
+            </div>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

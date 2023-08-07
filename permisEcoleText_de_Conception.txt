@@ -1,0 +1,50 @@
+- Pour faire la bar d'entete pas besoin d'une toolbar utiliser le code utilise pour leboncoin par Driss
+ (fait)
+- Pour le speudo menu d'accueil, monter des images a afficher et mettre la zone de menu au centre (fait)
+
+- Donner le background-image suivant le style scss ecrit dans home.page.scss
+
+- Pour les differentes occurences de "help", utiliser un alertController en adaptant la fonction help() disponible dans home.page.ts
+
+- Pour le listing des elements apres click sur un item a l'accueil, utiliser la meme methode que celle definit dans GetTime ou QuickService (fait)
+- Ajouter a l'entete de chaque nouvelle page une icone de parametre qui ouvrira un alertController ou un modal dan lequel on pourra definir le mode du test(selection de bouton),
+et preciser aussi l'option toujours Corriger (checkbox) avec un bouton annuler et un bouton valider
+
+- Definir des listes avec des checkbox en slot="end" pour certaines pages
+
+- Definir des cards en grid de 4 colonne pour l'affichage dans certaines pages (chercher comment rendre disabled un card en fonction du contenu d'une variable)
+
+- Lecture d'audio automatique et au click sur un composant specifique
+
+- Afficher une image differente a un moment donnee pour les corrections
+
+/////////////////////////////////////////////////////////////////////////
+
+- il faut creer un service categorie_cours qui va remplacer le service cour (fait)
+- il faut creer une interface categorie_cours qui va remplacer l'interface cour (fait)
+- il faut creer une nouvelle page cour_list qui aura un affichage soit en grille comme les-cours
+ ou en liste des cours pour une categorie donnee
+/////////////////////////////////////////////////////////////////////////
+
+- changer le placeholder de l'ion-searchbar pour mettre: rechercher par le titre ou la date (fait)
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+- Copier le code d'affichage des typePanneaux (avec les options suivant et precedent) pour gerer la pagination des details d'un cour.
+- Trouver comment centrer les images dans les-atualites et/ou mieux les afficher
+- Changer le background de detail actualite (fait)
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+comment bien effectuer la liaison entre laravel et ionic avec les routes.
+comment gerer le format de la date dans les donnees recus.
+les images des actualites ne s'affichent pas. (le dossier uploads se trouvent où??)
+besoin des route de recuperation des donnees completes pour chaque elements avec ses images (ex: apropos, home)
+besoin de fakes data pour tester les routes.
+
+la taille des colonnes contenu1 et contenu2 sont petites
+
+problemes avec apropos.
+reverifier les routes.

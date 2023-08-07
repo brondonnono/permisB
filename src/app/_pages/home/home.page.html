@@ -1,0 +1,118 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Accueil
+    </ion-title>
+  </ion-toolbar>
+  <div class="titleBar">
+    <div class="flex">
+      <div class="mg-10">
+        <img class="logo" src="assets/images/logo.png" alt="Logo Auto-Ecole" />
+      </div>
+      <div class="mg">
+        <ion-label class="msg1">
+          Bienvenue à l'AE Justine
+        </ion-label>
+        <br />
+        <ion-label class="text-center msg2">
+          "Se former autrement"
+        </ion-label>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-slides class="slideroption mg-t-10 mg-l-r-10" #slider loop="true" pager="false" [options]="slideOptions" (ionSlideTouchEnd)="slideChanged()">
+      <ion-slide class="slide-zoom" *ngFor="let item of AEImg">
+        <img [src]="item.img" />
+      </ion-slide>
+  </ion-slides>
+  <ion-slides class="sliderTitle mg-l-r-10" #slider loop="true" pager="false" [options]="slideOptions" (ionSlideTouchEnd)="slideChanged()">
+    <ion-slide class="ion-padding-start" *ngFor="let item of AEImg">
+      <h5>{{item.title}}</h5>
+    </ion-slide>
+  </ion-slides>
+  <div class="infos" *ngIf="!darkMode.dark">
+    <div>
+      <h2>Depuis</h2> 2017
+    </div>
+    <div>
+      <h2>Formés</h2> 1300
+    </div>
+    <div>
+      <h2>Formateurs</h2> 03
+    </div>
+    <div>
+      <h2>Capacités</h2> 30
+    </div>
+    <div>
+      <h2>Récompenses</h2> 02
+    </div>
+  </div>
+  <div class="infos-dark" *ngIf="darkMode.dark">
+    <div>
+      <h2>Depuis</h2> 2017
+    </div>
+    <div>
+      <h2>Formés</h2> 1300
+    </div>
+    <div>
+      <h2>Formateurs</h2> 03
+    </div>
+    <div>
+      <h2>Capacités</h2> 30
+    </div>
+    <div>
+      <h2>Récompenses</h2> 02
+    </div>
+  </div>
+  <div>
+    <div class="borders">
+      <div class="titleBlock div_rules actu-border" *ngIf="!darkMode.dark">
+        <strong>Nos 03 règles de conduite</strong>
+      </div>
+
+      <div class="titleBlock-dark div_rules actu-border" *ngIf="darkMode.dark">
+        <strong>Nos 03 règles de conduite</strong>
+      </div>
+      <ion-card class="rules">
+        <div class="f-mg-l">
+          <img [src]="AERulesImgFr[0].img" [alt]="AERulesImgFr[0].title">
+        </div>
+        <div>
+          <img [src]="AERulesImgFr[1].img" [alt]="AERulesImgFr[1].title">
+        </div>
+        <div class="l-mg-r">
+          <img [src]="AERulesImgFr[2].img" [alt]="AERulesImgFr[2].title">
+        </div>
+      </ion-card>
+      <div class="titleBlock div_news actu-border" *ngIf="!darkMode.dark">
+        <strong>Notre actualité</strong>
+      </div>
+      <div class="titleBlock-dark div_news actu-border" *ngIf="darkMode.dark">
+        <strong>Notre actualité</strong>
+      </div>
+    </div>
+    <div class="actu-content">
+        <ion-card *ngFor=" let actu of actus">           <!--class="border" -->
+          <div class="actu-item" (click)="showDetail(actu)">
+            <div class="img-box">
+              <img [src]='actu.img' alt="actualite image" />
+            </div>
+            <div class="mg-l-10">
+              <h6 class="actu_title">{{actu.title}}</h6>
+              <h6 class="actu_descrip">{{actu.description}}</h6>
+              <h6 class="actu_date">                
+                <ion-icon slot="start" name="time-outline"></ion-icon>
+                {{actu.datePub}}
+              </h6>
+            </div>
+          </div>
+        </ion-card>
+    </div>
+  </div>
+</ion-content>

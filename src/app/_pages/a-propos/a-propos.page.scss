@@ -1,0 +1,88 @@
+
+ion-content {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+ion-toolbar {
+    --background: #d22b32 !important;
+    color: white;
+}
+
+.slideroption {
+    height: 250px;
+    align-items: center;
+    border-radius: 25px !important;
+    .slide-zoom {
+        border-radius: 25px !important;
+        img {
+            border-radius: 25px !important;
+            width: inherit;
+            height: 250px !important;
+        }
+    }
+}
+
+.bloc {
+    border: 1px solid #d22b32;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background: #d22b32;
+    padding-left: 50px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 15px;
+    width: 70%;
+    display: inline-block;
+}
+
+div ion-button {
+    --border-radius: 5px;
+    --background: white;
+    border: 1px transparent;
+    --color: black;
+    width: 80%;
+    padding-left: 47px;
+    padding-right: 47px;
+    border-radius: 5px;
+}
+
+.firstBtn {
+    margin-right: -60px;
+}
+
+.flex {
+    display: flex;
+    margin: 10px;
+}
+
+.mg-10 {
+    margin: 10px;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    background: #d22b32 !important;
+    
+    span {
+        margin: 10px;
+    }
+}
+
+.description {
+    //color: rgb(5, 5, 5);
+    padding-right: 40px;
+    padding-left: 40px;
+    text-align: justify !important;
+    //text-align-last: unset;
+}
+
+.pdf {
+    text-align: center;
+    img {
+        width: 60px;
+    }
+}

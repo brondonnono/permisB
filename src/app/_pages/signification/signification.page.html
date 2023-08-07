@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- button placed to the top start -->
+    <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+      Signification
+   </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <img [src]="pan.img">
+  </div>
+  <div class="center">
+    <ion-label class="ion-padding-start"><strong>{{pan.title}}</strong></ion-label>
+  </div>
+  <div class="center description ion-padding-start">
+    <p>{{pan.description}}</p>
+  </div>
+</ion-content>

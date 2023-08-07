@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Les panneaux</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="blockChoice" *ngIf="!darkMode.dark">
+    <div class="flexi">
+      <div>
+        <ion-label slot="start" (click)="previous()">
+          <ion-icon name="chevron-back-sharp" slot="start"></ion-icon>
+        </ion-label>
+      </div>
+      <div class="flex">
+        <img class="typeImg" [src]="type.img" [alt]="type.title" (click)="showPanels(type)" />
+      </div>
+      <div>
+        <ion-label class="left" slot="end" (click)="next()">
+          <ion-icon name="chevron-forward-sharp" slot="end"></ion-icon>
+        </ion-label>
+      </div>
+    </div>
+    <div class="flexi">
+      <div>
+        &nbsp;
+      </div>
+      <div>
+        <label class="ion-padding-start">{{type.title}}</label>
+      </div>
+      <div>
+        &nbsp;
+      </div>
+    </div>
+  </div>
+  <div class="blockChoice-dark" *ngIf="darkMode.dark">
+    <div class="flexi">
+      <div>
+        <ion-label slot="start" (click)="previous()">
+          <ion-icon name="chevron-back-sharp" slot="start"></ion-icon>
+        </ion-label>
+      </div>
+      <div class="flex">
+        <img class="typeImg" [src]="type.img" [alt]="type.title" (click)="showPanels(type)" />
+      </div>
+      <div>
+        <ion-label class="left" slot="end" (click)="next()">
+          <ion-icon name="chevron-forward-sharp" slot="end"></ion-icon>
+        </ion-label>
+      </div>
+    </div>
+    <div class="flexi">
+      <div>
+        &nbsp;
+      </div>
+      <div>
+        <label class="ion-padding-start">{{type.title}}</label>
+      </div>
+      <div>
+        &nbsp;
+      </div>
+    </div>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let pan of panneaux">
+        <ion-card (click)="showDetails(pan)">
+          <img [src]="pan.img" alt="pan.title" />
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
